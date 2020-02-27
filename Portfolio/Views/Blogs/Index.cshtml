@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Portfolio.Models.Blog>
+
+@{
+    ViewData["Title"] = "Blogs";
+}
+    <div class="blog-page">
+        <div class="blogs-wrapper container">
+            <h1 class="blogs-heading">Blogs</h1>
+            <div class="blogs row  ">
+
+                @foreach (var blog in Model)
+                {
+                    <div class="blog-wrapper col-sm-4 p-2">
+                        <div class=" blog p-0 ">
+                            <div class="blog-image"><img src="~/UploadedImages/@blog.ImagePath" /></div>
+                            <div class="blog-content">
+                                <div class="blog-title">@blog.Title</div>
+                                <div class="blog-description">@blog.Description</div>
+                                <div class="blog-btn">
+                                    <a href="@blog.BlogLink" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>

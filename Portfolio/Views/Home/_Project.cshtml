@@ -1,0 +1,27 @@
+﻿@model  IEnumerable<Portfolio.Models.Project>
+<div class="portfolio-section">
+    <div class="container">
+        <div class="row">
+            @foreach (Project project in Model)
+            {
+                <div class="col-md-4 col-12 col-sm-6 p-1">
+                    <div class="hovereffect">
+                        <img class="img-responsive" src="http://placehold.it/350x200" alt="">
+                        <div class="overlay">
+                            <h2>@project.Name</h2>
+                            <a class="info" href="#">Visit Project</a>
+                            <a class="info" data-toggle="modal" data-target="#quickview">Quick View</a>
+                        </div>
+                    </div>
+
+                </div>
+            }
+            
+
+
+        </div>
+
+    </div>
+    <div class="view-more"><a href="/Portfolio">View More >></a></div>
+
+</div>

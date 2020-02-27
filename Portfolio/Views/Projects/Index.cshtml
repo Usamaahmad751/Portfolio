@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Portfolio.Models.Project>
+
+@{
+    ViewData["Title"] = "Projects";
+}
+
+<div class="portfolio-section">
+    <div class="container">
+
+        <h1 class="projects-heading">@ViewData["Title"]</h1>
+        <div class="row">
+            @{
+
+                var i = 0;
+            }
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-4 col-12 col-sm-6 p-1">
+                    <div class="hovereffect">
+                        <div class="project" style="background-image:url('/UploadedImages/@item.ImagePath');">
+                            <div class="overlay">
+                                <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+                                <a class="info" href="#">Visit Project</a>
+                                <a class="info" data-toggle="modal" data-target="#portfolio-@i ">Quick View</a>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                i++;
+            }
+        </div>
+    </div>
+
+    @{ var j = 0;}
+    @foreach (var item in Model)
+    {<div class="modal fade" id="portfolio-@j" tabindex="-1" role="dialog" aria-labelledby="quickViewTitle" aria-hidden="true">
+
+            <div class="modal-box modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+
+                    <div class="bg-contact100" style="background-image: url('images/bg-01.jpg');">
+                        <div class="quickview">
+                            <div class="row">
+                                <div class="col-md-6 col-12 my-auto">
+                                    <div class="project-specs">
+                                        <div class="project-title">
+                                            <a href="@item.Url" target="_blank" style="color:black">
+                                                @Html.DisplayFor(model => item.Name)
+                                            </a>
+                                        </div>
+                                        <div class="project-tagline">
+                                            @Html.DisplayFor(model => item.Tagline)
+
+                                        </div>
+                                        <div class="project-details"> 
+                                            @Html.DisplayFor(model => item.Specification)
+                                        </div>
+
+                                        <p class="tech-heading">Technologies</p>
+
+                                        <div class="technologies">
+
+                                            @{
+
+                                                string words = item.Technologies;
+                                                string[] technologies = words.Split(",");
+                                                foreach (var word in technologies)
+                                                {
+                                                    <div class="technology">
+                                                        @word
+                                                    </div>
+                                                };
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12 my-auto">
+                                    <div class="project-img">
+                                        <div class="image">
+                                            <a href="@item.Url" target="_blank"> <img src="~/UploadedImages/@item.ImagePath" class="img-thumbnail" /></a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        j++;
+    }
+</div>

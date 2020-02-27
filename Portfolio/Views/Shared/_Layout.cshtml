@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Portfolio</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://kit.fontawesome.com/e6f597626e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm fixed-top navbar-toggleable-sm navbar-light bg-white   mb-3">
+            <div class="container">
+                <a class="navbar-brand"  href="/"><img src="~/images/Logo.jpg" class="logo_img"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <div class="services">
+
+                        <a class="nav-link medium text-dark" target="_blank" href="https://medium.com/@('@')usamaahmad751">Medium <span><i class="fas fa-external-link-alt"></i></span></a>
+
+                    </div>
+                    <ul class="navbar-nav flex-grow-1">
+                        <span class="nav-separator">|</span>
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark home" href="/">Home</a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="/projects">Portfolio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark button big" id="contact" href="/resume">Resume</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark button big" id="contact" href="/blogs">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="get-start" data-toggle="modal" data-target="#startAProject">Start A Project</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Start A Project Modal -->
+    <div class="modal fade" id="startAProject" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-box modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="bg-contact100" style="background-image: url('images/bg-01.jpg');">
+                    <div class="container-contact100">
+                        <div class="contact row">
+                            <div class="contact100-pic js-tilt col-5 my-auto" data-tilt>
+                                <img src="images/img-01.png" alt="IMG">
+                            </div>
+
+                            <form method="post" asp-controller="Contact" class="contact100-form validate-form col-7">
+                                <span class="contact100-form-title">
+                                    Send Your Requirements
+                                </span>
+
+                                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                                    <input required class="input100" type="text" name="Name" placeholder="Name">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <input required class="input100" type="text" name="Email" placeholder="Email">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="wrap-input100 validate-input" data-validate="Subject is required">
+                                    <input  required class="input100" type="text" name="Subject" placeholder="Subject">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                                    <textarea required class="input100" name="Message" placeholder="Message"></textarea>
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="container-contact100-form-btn">
+                                    <input type="submit" class="contact100-form-btn" value="Send" />
+
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactUs" tabindex="-1" role="dialog" aria-labelledby="contactUsTitle" aria-hidden="true">
+        <div class="modal-box modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="bg-contact100" style="background-image: url('images/bg-01.jpg');">
+                    <div class="container-contact100">
+                        <div class="contact row">
+                            <div class="contact100-pic js-tilt col-5 my-auto" data-tilt>
+                                <img src="images/img-01.png" alt="IMG">
+                            </div>
+
+                            <form method="post" asp-controller="Contact" class="contact100-form validate-form col-7">
+                                <span class="contact100-form-title">
+                                    Get In Touch
+                                </span>
+
+                                <div class="wrap-input100 validate-input" data-validate="Name is required">
+                                    <input required class="input100" type="text" name="Name" placeholder="Name">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+
+                                <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                    <input required class="input100" type="text" name="Email" placeholder="Email">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="wrap-input100 validate-input" data-validate="Subject is required">
+                                    <input required class="input100" type="text" name="Subject" placeholder="Subject">
+                                    <span class="focus-input100"></span>
+                                    <span class="symbol-input100">
+                                        <i class="fa fa-user" aria-hidden="true"></i>
+                                    </span>
+                                </div>
+                                <div class="wrap-input100 validate-input" data-validate="Message is required">
+                                    <textarea required class="input100" name="Message" placeholder="Message"></textarea>
+                                    <span class="focus-input100"></span>
+                                </div>
+
+                                <div class="container-contact100-form-btn">
+                                    <input type="submit" class="contact100-form-btn" value="Send" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <main role="main" class="p-0">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="footer-menu footer-left">
+                        <li class="footer-item">Powered By .Net Core 3.0. Design And Developed By UsamaAhmad &copy; @DateTime.Now.Year</li>
+
+                    </ul>
+                    <ul class="footer-menu footer-right">
+                        <li class="footer-item"><a href="/">Home</a></li>
+                        <li class="footer-item"><a href="/about">About</a></li>
+                        <li class="footer-item"><a href="/services">Services</a></li>
+                        <li class="footer-item"><a href="/projects">Portfolio</a></li>
+                        <li class="footer-item"><a data-toggle="modal" data-target="#contactUs">Contact</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
