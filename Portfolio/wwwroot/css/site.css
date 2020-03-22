@@ -668,9 +668,6 @@ textarea.input100 {
     color: #666666;
 }
 
-
-/*------------------------------------------------------------------
-[ Focus ]*/
 .focus-input100 {
     display: block;
     position: absolute;
@@ -731,8 +728,6 @@ textarea.input100 {
     padding-left: 22px;
 }
 
-/*------------------------------------------------------------------
-[ Button ]*/
 .container-contact100-form-btn {
     width: 100%;
     display: -webkit-box;
